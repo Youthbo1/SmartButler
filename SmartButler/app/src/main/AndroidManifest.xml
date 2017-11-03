@@ -4,7 +4,10 @@
 
     <!-- To access Google+ APIs: -->
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
     <application
         android:name=".application.BaseApplication"
         android:allowBackup="true"
@@ -13,15 +16,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+
+
+        <activity android:name=".ui.SplashActivity"
+            android:theme="@style/NoActivityFullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.SettingActivity"
-            android:label="设置"/>
+        <activity
+            android:name=".ui.SettingActivity"
+            android:label="设置" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".ui.GuideActivity"
+            android:theme="@style/NoActivityFullscreen"/>
     </application>
 
 </manifest>

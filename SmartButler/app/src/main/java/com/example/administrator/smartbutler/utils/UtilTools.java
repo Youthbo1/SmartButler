@@ -1,5 +1,9 @@
 package com.example.administrator.smartbutler.utils;
 
+import android.content.Context;
+import android.graphics.Typeface;
+import android.widget.TextView;
+
 /**
  * 项目名：  SmartButler
  * 包名：    com.example.administrator.smartbutler.utils
@@ -10,4 +14,12 @@ package com.example.administrator.smartbutler.utils;
  */
 
 public class UtilTools {
+
+   
+    //设置字体
+    public static void setFont(Context mContext, TextView textview) {
+        Typeface fontType = Typeface.createFromAsset(mContext.getAssets(), "fonts/FONT.TTF");
+        textview.setTypeface(fontType);
+    }
 }
+

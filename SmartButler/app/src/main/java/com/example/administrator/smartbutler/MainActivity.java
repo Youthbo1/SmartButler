@@ -15,6 +15,8 @@ import com.example.administrator.smartbutler.fragment.GirlFragment;
 import com.example.administrator.smartbutler.fragment.UserFragment;
 import com.example.administrator.smartbutler.fragment.WechatFragment;
 import com.example.administrator.smartbutler.ui.*;
+import com.example.administrator.smartbutler.utils.L;
+import com.tencent.bugly.crashreport.CrashReport;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,7 +58,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         initData();
         initView();
-
+       // CrashReport.testJavaCrash();
+//        L.d("t********************************");
+//        L.e("t********************************");
+//        L.i("t********************************");
+//        L.w("t********************************");
+//        L.d("t********************************");
     }
 
     //初始化数据
@@ -72,6 +79,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mFragment.add(new WechatFragment());
         mFragment.add(new GirlFragment());
         mFragment.add(new UserFragment());
+
+
     }
 
     //初始化View

@@ -10,4 +10,10 @@ package com.example.administrator.smartbutler.utils;
  */
 
 public class StaticClass {
+
+    //闪屏页延时
+    public static final int HANDLER_SPLASH =1001;
+
+    public static final String SHARE_IS_FIRST="isFirst";
+    public static final String BUGLY_APP_ID="60f3f64f81";
 }
