@@ -37,6 +37,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+
     //TabLayout
     private TabLayout mTabLayout;
     //ViewPager
@@ -58,12 +59,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         initData();
         initView();
-       // CrashReport.testJavaCrash();
-//        L.d("t********************************");
-//        L.e("t********************************");
-//        L.i("t********************************");
-//        L.w("t********************************");
-//        L.d("t********************************");
+
     }
 
     //初始化数据
@@ -79,20 +75,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mFragment.add(new WechatFragment());
         mFragment.add(new GirlFragment());
         mFragment.add(new UserFragment());
-
-
     }
 
     //初始化View
     private void initView() {
-
-        fab_setting =  findViewById(R.id.fab_setting);
+        fab_setting = (FloatingActionButton) findViewById(R.id.fab_setting);
         fab_setting.setOnClickListener(this);
         //默认隐藏
         fab_setting.setVisibility(View.GONE);
-
-        mTabLayout = findViewById(R.id.mTabLayout);
-        mViewPager = findViewById(R.id.mViewPager);
+        mTabLayout = (TabLayout) findViewById(R.id.mTabLayout);
+        mViewPager = (ViewPager) findViewById(R.id.mViewPager);
         //预加载
         mViewPager.setOffscreenPageLimit(mFragment.size());
 

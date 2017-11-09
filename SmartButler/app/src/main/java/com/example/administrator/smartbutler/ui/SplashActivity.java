@@ -15,7 +15,8 @@ import android.widget.TextView;
 
 import com.example.administrator.smartbutler.MainActivity;
 import com.example.administrator.smartbutler.R;
-import com.example.administrator.smartbutler.fragment.ShareUtils;
+import com.example.administrator.smartbutler.utils.ShareUtils;
+import com.example.administrator.smartbutler.utils.L;
 import com.example.administrator.smartbutler.utils.StaticClass;
 import com.example.administrator.smartbutler.utils.UtilTools;
 
@@ -40,9 +41,11 @@ public class SplashActivity extends AppCompatActivity {
                 case StaticClass.HANDLER_SPLASH:
                     //判断程序是否是第一次运行
                     if (isFirst()) {
-                        startActivity(new Intent(SplashActivity.this, GuideActivity.class));
+                        startActivity(new Intent(SplashActivity.this,GuideActivity.class));
+                        L.e("*1111111111111111111111111");
                     } else {
-                        startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                        startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+                        L.e("*222222222222");
                     }
                     finish();
                     break;

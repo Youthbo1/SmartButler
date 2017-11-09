@@ -11,7 +11,7 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         ndk {
             // 设置支持的SO库架构
-            abiFilters 'armeabi','x86' //, 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+            abiFilters 'armeabi', 'x86' //, 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
         }
     }
     buildTypes {
@@ -19,6 +19,13 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+}
+
+//添加本地仓库
+repositories {
+    flatDir {
+        dirs 'libs'
     }
 }
 
@@ -33,8 +40,55 @@ dependencies {
     compile 'com.tencent.bugly:crashreport:latest.release'
     compile 'com.tencent.bugly:nativecrashreport:latest.release'
 
+    compile('cn.bmob.android:bmob-sdk:3.5.5') {
+        exclude group: 'io.reactivex'
+    }
+    compile 'de.hdodenhof:circleimageview:2.2.0'
 
+    compile('com.kymjs.rxvolley:rxvolley:1.1.4') {
+        exclude group: 'io.reactivex'
+    }
+    //photoview
+    compile 'com.github.chrisbanes:PhotoView:1.3.0'
+
+    compile 'com.squareup.picasso:picasso:2.5.2'
+
+    //CircleImageView
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    //Picasso
+    compile 'com.squareup.picasso:picasso:2.5.2'
+
+    compile files('libs/Msc.jar')
+    compile files('libs/Sunflower.jar')
+    //RxVolley
+    compile('com.kymjs.rxvolley:rxvolley:1.1.2') {
+        exclude group: 'com.squareup.okhttp3', module: 'okhttp'
+        exclude group: 'com.squareup.okio'
+        exclude group: 'io.reactivex'
+    }
+    //RxVolley下载模块
+    compile('com.kymjs.rxvolley:okhttp:1.1.0') {
+        exclude group: 'com.squareup.okhttp3'
+        exclude group: 'com.squareup.okio'
+    }
+    //Bmob
+    compile('cn.bmob.android:bmob-sdk:3.5.0') {
+        exclude group: 'com.squareup.okhttp3', module: 'okhttp'
+        exclude group: 'io.reactivex:rxandroid'
+        exclude group: 'io.reactivex:rxjava'
+        exclude group: 'com.squareup.okio'
+    }
+    //NumberProgressBar
+    compile 'com.daimajia.numberprogressbar:library:1.2@aar'
+    //二维码
+    //compile project(path: ':libzxing')
+    //百度地图
+   // compile files('libs/BaiduLBS_Android.jar')
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    //NumberProgressBar
+    compile 'com.daimajia.numberprogressbar:library:1.2@aar'
+
 }
+
